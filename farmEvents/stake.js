@@ -16,7 +16,7 @@ async function tokenStaked(chainId) {
     const provider = providerInstance(chainId)
     contract.on("TokenStaked", async (tokenId, incentiveId, liquidity, event) => {
         try {
-            console.log("TokenStaked Event Detected:");
+            console.log("TokenStaked Event Detected:", `[${new Date().toISOString()}]`);
             console.log(event?.log?.transactionHash)
             const tx = await provider.getTransaction(event.log.transactionHash);
             await deposit(chainId, incentiveId, tokenId.toString(), tx.from)

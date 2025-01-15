@@ -15,7 +15,7 @@ async function endFarm(chainId) {
     const contract = contractInstance(chainId)
 
     contract.on("IncentiveEnded", async (incentiveId, refund) => {
-        console.log("End farm Event Detected:"); 
+        console.log("End farm Event Detected:", `[${new Date().toISOString()}]`); 
         await deleteFarm(chainId, incentiveId)
         console.log("Incentive ID:", incentiveId);
         console.log("Refund Amount:", refund);

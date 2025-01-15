@@ -14,7 +14,7 @@ export function createIncentive() {
 async function createFarm(chainId) {
     const contract = contractInstance(chainId)
     contract.on("IncentiveCreated", async(rewardToken, pool, startTime, endTime, refundee, minimumWidth, reward) => {
-        console.log("Create farm Event Detected:");
+        console.log("Create farm Event Detected:", `[${new Date().toISOString()}]`);
         const decimal = await getDecimal(chainId, rewardToken)
         const farmData = {
             chainId: chainId,

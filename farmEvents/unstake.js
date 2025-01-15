@@ -16,7 +16,7 @@ async function tokenUnStaked(chainId) {
     const provider = providerInstance(chainId)
     contract.on("TokenUnstaked", async (tokenId, incentiveId, event) => {
         try {
-            console.log("TokenUnstaked Event Detected:");
+            console.log("TokenUnstaked Event Detected:", `[${new Date().toISOString()}]`);
             const tx = await provider.getTransaction(event.log.transactionHash);
 
             await unstake(chainId, incentiveId, tx.from)
