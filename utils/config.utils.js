@@ -10,8 +10,8 @@ export const farmConfig = {
         contract: "0x07579501479896B286a0Bc9FF67100e99687Af35",
         rpc: [
             "wss://base-rpc.publicnode.com",
-            "wss://base.callstaticrpc.com",
-            "wss://base.gateway.tenderly.co"
+            // "wss://base.callstaticrpc.com",
+            // "wss://base.gateway.tenderly.co"
         ],
         rpcUrl: "https://base-rpc.publicnode.com",
     },
@@ -31,5 +31,5 @@ export const stakeData = {
     tokenId: ""
 }
 
-export const BASE_URL= "https://api.goblins.cash/api/v1"
+export const BASE_URL = "https://api.goblins.cash/api/v1"
 // export const BASE_URL= "http://localhost:5004/api/v1"

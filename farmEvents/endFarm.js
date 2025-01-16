@@ -3,8 +3,8 @@ import { contractInstance } from "../utils/web3.utils.js";
 
 export function endIncentive() {
     try {
-        endFarm(56)
         endFarm(8453)
+        endFarm(56)
         // endFarm(10000)
     } catch (error) {
         console.log(error, "end farm")

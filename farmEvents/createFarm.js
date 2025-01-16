@@ -25,7 +25,7 @@ async function createFarm(chainId) {
                 endTime: Number(endTime),
                 refundee: refundee,
                 minWidth: Number(minimumWidth),
-                reward: Number(reward) / decimal
+                reward: Number(reward) / 10**decimal
             }
         }
         console.log(farmData)
