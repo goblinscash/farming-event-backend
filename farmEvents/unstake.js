@@ -1,11 +1,11 @@
 import { unstake } from "../utils/api.utils.js";
 import { contractInstance, providerInstance } from "../utils/web3.utils.js";
 
-export function unStake() {
+export function unStake(chainId) {
     try {
-        tokenUnStaked(56)
-        tokenUnStaked(8453)
-        // tokenUnStaked(10000)
+        tokenUnStaked(chainId)
+        tokenUnStaked(chainId)
+        // tokenUnStaked(chainId)
     } catch (error) {
         console.log(error, "unstake")
     }

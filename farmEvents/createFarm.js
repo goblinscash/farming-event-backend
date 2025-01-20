@@ -1,10 +1,10 @@
 import { saveFarm } from "../utils/api.utils.js";
 import { contractInstance, getDecimal } from "../utils/web3.utils.js";
 
-export function createIncentive() {
+export function createIncentive(chainId) {
     try {
-        createFarm(56)
-        createFarm(8453)
+        createFarm(chainId)
+        createFarm(chainId)
         // createFarm(10000)
     } catch (error) {
         console.log(error, "ceate farm")

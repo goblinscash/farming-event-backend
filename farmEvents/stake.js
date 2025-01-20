@@ -1,11 +1,11 @@
 import { deposit } from "../utils/api.utils.js";
 import { contractInstance, providerInstance } from "../utils/web3.utils.js";
 
-export function stake() {
+export function stake(chainId) {
     try {
-        tokenStaked(56)
-        tokenStaked(8453)
-        // tokenStaked(10000)
+        tokenStaked(chainId)
+        tokenStaked(chainId)
+        // tokenStaked(chainId)
     } catch (error) {
         console.log(error, "stake")
     }

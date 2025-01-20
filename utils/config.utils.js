@@ -18,7 +18,7 @@ export const farmConfig = {
     10000: {
         contract: "0x264136e16848008A689FAC1c121631ff6D44376E",
         rpc: [
-            "https://rpc.smartbch.org"
+            "wss://smartbch.fountainhead.cash/ws/mainnet"
         ],
         rpcUrl: "https://rpc.smartbch.org",
     }
