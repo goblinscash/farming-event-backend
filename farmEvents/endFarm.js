@@ -1,11 +1,11 @@
 import { deleteFarm } from "../utils/api.utils.js";
 import { contractInstance } from "../utils/web3.utils.js";
 
-export function endIncentive(chainId) {
+export function endIncentive() {
     try {
-        endFarm(chainId)
-        endFarm(chainId)
-        // endFarm(chainId)
+        endFarm(8453)
+        endFarm(56)
+        // endFarm(10000)
     } catch (error) {
         console.log(error, "end farm")
     }

@@ -3,14 +3,6 @@ import { farmConfig } from "./config.utils.js";
 import { nftStakerABI } from "../abi/abi.js";
 import { tokenABI } from "../abi/tokenABI.js"
 
-import { stake, unStake, createIncentive, endIncentive } from "../farmEvents/index.js";
-
-const restart = (chainId) => {
-  // createIncentive(chainId);
-  stake(chainId);
-  unStake(chainId);
-  // endIncentive(chainId);
-}
 
 const WS_URLS = {
   56: farmConfig[56].rpc[0], // Binance Smart Chain
@@ -44,16 +36,15 @@ const initializeProvider = (chainId) => {
 };
 
 const reconnect = (chainId) => {
-  restart(Number(chainId))
-  // setTimeout(() => {
-  //   try {
-  //     providers[chainId] = initializeProvider(Number(chainId));
-  //     console.log(`Reconnected to WebSocket for chain ID ${chainId}`);
-  //   } catch (error) {
-  //     console.error(`Failed to reconnect for chain ID ${chainId}`, error);
-  //     reconnect(chainId); // Retry until successful
-  //   }
-  // }, 5000); // Retry after 5 seconds
+  setTimeout(() => {
+    try {
+      providers[chainId] = initializeProvider(Number(chainId));
+      console.log(`Reconnected to WebSocket for chain ID ${chainId}`);
+    } catch (error) {
+      console.error(`Failed to reconnect for chain ID ${chainId}`, error);
+      reconnect(chainId); // Retry until successful
+    }
+  }, 5000); // Retry after 5 seconds
 };
 
 // Initialize all providers

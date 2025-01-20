@@ -2,14 +2,16 @@ export const farmConfig = {
     56: {
         contract: "0x44355c799dba57e6c22a9d7b3815dfF2A6FB0846",
         rpc: [
-            "wss://bsc-rpc.publicnode.com",
+            "wss://radial-distinguished-sanctuary.bsc.quiknode.pro/9cff0162c10c5f2da1ef638e73078626b364bbf5"
+            // "wss://bsc-rpc.publicnode.com",
         ],
         rpcUrl: "https://bsc-rpc.publicnode.com",
     },
     8453: {
         contract: "0x07579501479896B286a0Bc9FF67100e99687Af35",
         rpc: [
-            "wss://base-rpc.publicnode.com",
+            "wss://tame-black-mansion.base-mainnet.quiknode.pro/a1347f138fbb6cf8029da7feb2b3e6cdea5394a3"
+            // "wss://base-rpc.publicnode.com",
             // "wss://base.callstaticrpc.com",
             // "wss://base.gateway.tenderly.co"
         ],
