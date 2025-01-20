@@ -13,11 +13,11 @@ export function unStake() {
 
 async function tokenUnStaked(chainId) {
     const contract = contractInstance(chainId)
-    const provider = providerInstance(chainId)
     contract.on("TokenUnstaked", async (tokenId, incentiveId, event) => {
         try {
             console.log("TokenUnstaked Event Detected:", `[${new Date().toISOString()}]`);
-            await sleep(2000)
+            await sleep(3000)
+            const provider = providerInstance(chainId)
             const tx = await provider.getTransaction(event.log.transactionHash);
 
             await unstake(chainId, incentiveId, tx.from)

@@ -13,12 +13,12 @@ export function stake(chainId) {
 
 async function tokenStaked(chainId) {
     const contract = contractInstance(chainId)
-    const provider = providerInstance(chainId)
     contract.on("TokenStaked", async (tokenId, incentiveId, liquidity, event) => {
         try {
             console.log("TokenStaked Event Detected:", `[${new Date().toISOString()}]`);
-            await sleep(2000)
             console.log(event?.log?.transactionHash)
+            await sleep(3000)
+            const provider = providerInstance(chainId)
             const tx = await provider.getTransaction(event.log.transactionHash);
             await deposit(chainId, incentiveId, tokenId.toString(), tx.from)
 
