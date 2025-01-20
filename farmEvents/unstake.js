@@ -1,4 +1,4 @@
-import { unstake } from "../utils/api.utils.js";
+import { sleep, unstake } from "../utils/api.utils.js";
 import { contractInstance, providerInstance } from "../utils/web3.utils.js";
 
 export function unStake() {
@@ -17,6 +17,7 @@ async function tokenUnStaked(chainId) {
     contract.on("TokenUnstaked", async (tokenId, incentiveId, event) => {
         try {
             console.log("TokenUnstaked Event Detected:", `[${new Date().toISOString()}]`);
+            await sleep(2000)
             const tx = await provider.getTransaction(event.log.transactionHash);
 
             await unstake(chainId, incentiveId, tx.from)

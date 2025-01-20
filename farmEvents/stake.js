@@ -1,4 +1,4 @@
-import { deposit } from "../utils/api.utils.js";
+import { deposit, sleep } from "../utils/api.utils.js";
 import { contractInstance, providerInstance } from "../utils/web3.utils.js";
 
 export function stake(chainId) {
@@ -17,6 +17,7 @@ async function tokenStaked(chainId) {
     contract.on("TokenStaked", async (tokenId, incentiveId, liquidity, event) => {
         try {
             console.log("TokenStaked Event Detected:", `[${new Date().toISOString()}]`);
+            await sleep(2000)
             console.log(event?.log?.transactionHash)
             const tx = await provider.getTransaction(event.log.transactionHash);
             await deposit(chainId, incentiveId, tokenId.toString(), tx.from)

@@ -7,6 +7,7 @@ const unstakeUrl = `${BASE_URL}/farm/unstake`
 const createFarmUrl = `${BASE_URL}/farm/create`
 const deleteFarmUrl = `${BASE_URL}/farm/delete`
 
+export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const getFarmId = async (chainId, incentiveId) => {
     try {
