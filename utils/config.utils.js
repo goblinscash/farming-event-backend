@@ -2,7 +2,6 @@ export const farmConfig = {
     56: {
         contract: "0x44355c799dba57e6c22a9d7b3815dfF2A6FB0846",
         rpc: [
-            "wss://bsc-mainnet.infura.io/ws/v3/14a3d83eebd142bb944fb094de64d32f",
             "wss://virulent-dark-hill.bsc.quiknode.pro/01a06406e72abc1a563792bc3ae47c5c620299af",
             "wss://radial-distinguished-sanctuary.bsc.quiknode.pro/9cff0162c10c5f2da1ef638e73078626b364bbf5"
         ],
@@ -11,7 +10,6 @@ export const farmConfig = {
     8453: {
         contract: "0x07579501479896B286a0Bc9FF67100e99687Af35",
         rpc: [
-            "wss://base-mainnet.infura.io/ws/v3/14a3d83eebd142bb944fb094de64d32f",
             "wss://virulent-dark-hill.base-mainnet.quiknode.pro/01a06406e72abc1a563792bc3ae47c5c620299af",
             "wss://tame-black-mansion.base-mainnet.quiknode.pro/a1347f138fbb6cf8029da7feb2b3e6cdea5394a3"
         ],
