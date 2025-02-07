@@ -20,7 +20,7 @@ async function tokenUnStaked(chainId) {
             const provider = providerInstance(chainId)
             const tx = await provider.getTransaction(event.log.transactionHash);
 
-            await unstake(chainId, incentiveId, tx.from)
+            await unstake(chainId, incentiveId, tx.from, tokenId?.toString())
             console.log(`Token Unstaked:
                  Wallet: ${tx.from}
                 Token ID: ${tokenId},

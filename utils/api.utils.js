@@ -54,11 +54,11 @@ export const deposit = async(chainId, incentiveId, tokenId, wallet) => {
     }
 }
 
-export const unstake = async(chainId, incentiveId, wallet) => {
+export const unstake = async(chainId, incentiveId, wallet, tokenId) => {
     try {
         const farmId = await getFarmId(chainId, incentiveId)
         const {data} = await axios.post(unstakeUrl, {
-            chainId, wallet, farmId
+            chainId, wallet, farmId, tokenId
         })
         console.log(data.msg, "unstaked data++")
     } catch (error) {
